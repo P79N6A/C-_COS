@@ -1,0 +1,4 @@
+E:\TencentWork\C#_Terminate\COSXML\COSXML\bin\Debug\COSXML.dll
+E:\TencentWork\C#_Terminate\COSXML\COSXML\bin\Debug\COSXML.pdb
+E:\TencentWork\C#_Terminate\COSXML\COSXML\obj\Debug\COSXML.dll
+E:\TencentWork\C#_Terminate\COSXML\COSXML\obj\Debug\COSXML.pdb

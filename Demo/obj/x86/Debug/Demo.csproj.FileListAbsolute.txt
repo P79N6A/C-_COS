@@ -1,0 +1,7 @@
+E:\TencentWork\C#_Terminate\COSXML\Demo\obj\x86\Debug\Demo.csprojResolveAssemblyReference.cache
+E:\TencentWork\C#_Terminate\COSXML\Demo\bin\Debug\Demo.exe
+E:\TencentWork\C#_Terminate\COSXML\Demo\bin\Debug\Demo.pdb
+E:\TencentWork\C#_Terminate\COSXML\Demo\bin\Debug\COSXML.dll
+E:\TencentWork\C#_Terminate\COSXML\Demo\bin\Debug\COSXML.pdb
+E:\TencentWork\C#_Terminate\COSXML\Demo\obj\x86\Debug\Demo.exe
+E:\TencentWork\C#_Terminate\COSXML\Demo\obj\x86\Debug\Demo.pdb
