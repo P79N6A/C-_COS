@@ -9,36 +9,36 @@ using System.Text;
 */
 namespace COSXML.Utils
 {
-    public enum COSRegion
+    public enum CosRegion
     {
-        [COSValue("ap-beijing-1")]
+        [CosValue("ap-beijing-1")]
         AP_Beijing_1,
 
-        [COSValue("ap-beijing")]
+        [CosValue("ap-beijing")]
         AP_Beijing,
 
-        [COSValue("ap-shanghai")]
+        [CosValue("ap-shanghai")]
         AP_Shanghai,
 
-        [COSValue("ap-guangzhou")]
+        [CosValue("ap-guangzhou")]
         AP_Guangzhou,
 
-        [COSValue("ap-guangzhou-2")]
+        [CosValue("ap-guangzhou-2")]
         AP_Guangzhou_2,
         
-        [COSValue("ap-chengdu")]
+        [CosValue("ap-chengdu")]
         AP_Chengdu,
 
-        [COSValue("ap-singapore")]
+        [CosValue("ap-singapore")]
         AP_Singapore,
 
-        [COSValue("ap-hongkong")]
+        [CosValue("ap-hongkong")]
         AP_Hongkong,
 
-        [COSValue("na-toronto")]
+        [CosValue("na-toronto")]
         NA_Toronto,
 
-        [COSValue("eu-frankfurt")]
+        [CosValue("eu-frankfurt")]
         EU_Frankfurt
 
     }

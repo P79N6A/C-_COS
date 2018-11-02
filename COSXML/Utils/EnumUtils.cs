@@ -19,10 +19,10 @@ namespace COSXML.Utils
             }
             string name = value.ToString();
             var fieldInfo = value.GetType().GetField(name);
-            var attributes = fieldInfo.GetCustomAttributes(typeof(COSValueAttribute), false);
+            var attributes = fieldInfo.GetCustomAttributes(typeof(CosValueAttribute), false);
             if (attributes != null && attributes.Length > 0) 
             {
-                return ((COSValueAttribute)attributes[0]).value;
+                return ((CosValueAttribute)attributes[0]).value;
             }
             return null;
         }

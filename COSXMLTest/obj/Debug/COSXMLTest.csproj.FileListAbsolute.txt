@@ -1,0 +1,7 @@
+E:\TencentWork\C#_Terminate\COSXML\COSXMLTest\bin\Debug\COSXMLTest.dll
+E:\TencentWork\C#_Terminate\COSXML\COSXMLTest\bin\Debug\COSXMLTest.pdb
+E:\TencentWork\C#_Terminate\COSXML\COSXMLTest\obj\Debug\COSXMLTest.dll
+E:\TencentWork\C#_Terminate\COSXML\COSXMLTest\obj\Debug\COSXMLTest.pdb
+E:\TencentWork\C#_Terminate\COSXML\COSXMLTest\bin\Debug\COSXML.dll
+E:\TencentWork\C#_Terminate\COSXML\COSXMLTest\bin\Debug\COSXML.pdb
+E:\TencentWork\C#_Terminate\COSXML\COSXMLTest\obj\Debug\COSXMLTest.csprojResolveAssemblyReference.cache
