@@ -68,11 +68,14 @@
     <Compile Include="Model\Bucket\DeleteBucketTaggingResult.cs" />
     <Compile Include="Model\Bucket\GetBucketACLRequest.cs" />
     <Compile Include="Model\Bucket\GetBucketACLResult.cs" />
+    <Compile Include="Model\Bucket\GetBucketCORSRequest.cs" />
+    <Compile Include="Model\Bucket\GetBucketCORSResult.cs" />
     <Compile Include="Model\CosRequest.cs" />
     <Compile Include="Model\CosResult.cs" />
     <Compile Include="Model\Service\GetServiceRequest.cs" />
     <Compile Include="Model\Service\GetServiceResult.cs" />
     <Compile Include="Model\Tag\AccessControlPolicy.cs" />
+    <Compile Include="Model\Tag\CORSConfiguration.cs" />
     <Compile Include="Model\Tag\ListAllMyBuckets.cs" />
     <Compile Include="Network\Request.cs" />
     <Compile Include="Network\RequestBody.cs" />
