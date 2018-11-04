@@ -5,3 +5,10 @@ E:\TencentWork\C#_Terminate\COSXML\Demo\bin\Debug\COSXML.dll
 E:\TencentWork\C#_Terminate\COSXML\Demo\bin\Debug\COSXML.pdb
 E:\TencentWork\C#_Terminate\COSXML\Demo\obj\x86\Debug\Demo.exe
 E:\TencentWork\C#_Terminate\COSXML\Demo\obj\x86\Debug\Demo.pdb
+E:\gitHub\C#_COS\Demo\obj\x86\Debug\Demo.exe
+E:\gitHub\C#_COS\Demo\obj\x86\Debug\Demo.pdb
+E:\gitHub\C#_COS\Demo\bin\Debug\Demo.exe
+E:\gitHub\C#_COS\Demo\bin\Debug\Demo.pdb
+E:\gitHub\C#_COS\Demo\bin\Debug\COSXML.dll
+E:\gitHub\C#_COS\Demo\bin\Debug\COSXML.pdb
+E:\gitHub\C#_COS\Demo\obj\x86\Debug\Demo.csprojResolveAssemblyReference.cache

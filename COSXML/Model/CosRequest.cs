@@ -43,12 +43,12 @@ namespace COSXML.Model
             return path;
         }
 
-        public Dictionary<string, string> GetRequestParamters()
+        public virtual Dictionary<string, string> GetRequestParamters()
         {
             return queryParameters;
         }
 
-        public Dictionary<string, string> GetRequestHeaders()
+        public virtual Dictionary<string, string> GetRequestHeaders()
         {
             return headers;
         }
@@ -56,6 +56,7 @@ namespace COSXML.Model
         public abstract RequestBody GetRequestBody();
         
 
+        /**
         public void SetRequestMethod(string method)
         {
             this.method = method;
@@ -65,6 +66,7 @@ namespace COSXML.Model
         {
             this.path = path;
         }
+         */
 
         public void AddQueryParameter(string key, string value)
         {

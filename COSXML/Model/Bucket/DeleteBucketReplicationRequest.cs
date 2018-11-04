@@ -13,8 +13,8 @@ namespace COSXML.Model.Bucket
     public sealed class DeleteBucketReplicationRequest : BucketRequest
     {
         public DeleteBucketReplicationRequest(string bucket)
+            : base(bucket)
         {
-            this.bucket = bucket;
             this.method = CosRequestMethod.DELETE;
             this.queryParameters.Add("replication", null);
         }

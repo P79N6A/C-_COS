@@ -24,7 +24,7 @@ namespace COSXML.Utils
             {
                 return ((CosValueAttribute)attributes[0]).value;
             }
-            return null;
+            return name;
         }
     }
 }

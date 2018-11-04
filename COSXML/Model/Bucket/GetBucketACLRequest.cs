@@ -13,8 +13,8 @@ namespace COSXML.Model.Bucket
     public sealed class GetBucketACLRequest : BucketRequest
     {
         public GetBucketACLRequest(string bucket)
+            : base(bucket)
         {
-            this.bucket = bucket;
             this.method = CosRequestMethod.GET;
             this.queryParameters.Add("acl", null);
         }

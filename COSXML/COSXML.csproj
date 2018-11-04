@@ -45,9 +45,11 @@
     <Compile Include="Common\CosGrantPermission.cs" />
     <Compile Include="Common\CosMetaDataDirective.cs" />
     <Compile Include="Common\CosRegion.cs" />
+    <Compile Include="Common\CosRequestHeaderKey.cs" />
     <Compile Include="Common\CosRequestMethod.cs" />
     <Compile Include="Common\CosStorageClass.cs" />
     <Compile Include="Common\CosVersion.cs" />
+    <Compile Include="Common\GrantAccount.cs" />
     <Compile Include="CosException\CosClientException.cs" />
     <Compile Include="CosException\CosServerException.cs" />
     <Compile Include="Listener\CosProgressListener.cs" />
@@ -70,26 +72,66 @@
     <Compile Include="Model\Bucket\GetBucketACLResult.cs" />
     <Compile Include="Model\Bucket\GetBucketCORSRequest.cs" />
     <Compile Include="Model\Bucket\GetBucketCORSResult.cs" />
+    <Compile Include="Model\Bucket\GetBucketLifecycleRequest.cs" />
+    <Compile Include="Model\Bucket\GetBucketLifecycleResult.cs" />
+    <Compile Include="Model\Bucket\GetBucketLocationRequest.cs" />
+    <Compile Include="Model\Bucket\GetBucketLocationResult.cs" />
+    <Compile Include="Model\Bucket\GetBucketReplicationRequest.cs" />
+    <Compile Include="Model\Bucket\GetBucketReplicationResult.cs" />
+    <Compile Include="Model\Bucket\GetBucketRequest.cs" />
+    <Compile Include="Model\Bucket\GetBucketResult.cs" />
+    <Compile Include="Model\Bucket\GetBucketTaggingRequest.cs" />
+    <Compile Include="Model\Bucket\GetBucketTaggingResult.cs" />
+    <Compile Include="Model\Bucket\GetBucketVersioningRequest.cs" />
+    <Compile Include="Model\Bucket\GetBucketVersioningResult.cs" />
+    <Compile Include="Model\Bucket\HeadBucketRequest.cs" />
+    <Compile Include="Model\Bucket\HeadBucketResult.cs" />
+    <Compile Include="Model\Bucket\ListBucketVersionsRequest.cs" />
+    <Compile Include="Model\Bucket\ListBucketVersionsResult.cs" />
+    <Compile Include="Model\Bucket\ListMultiUploadsRequest.cs" />
+    <Compile Include="Model\Bucket\ListMultiUploadsResult.cs" />
+    <Compile Include="Model\Bucket\PutBucketACLRequest.cs" />
+    <Compile Include="Model\Bucket\PutBucketACLResult.cs" />
+    <Compile Include="Model\Bucket\PutBucketCORSRequest.cs" />
+    <Compile Include="Model\Bucket\PutBucketCORSResult.cs" />
+    <Compile Include="Model\Bucket\PutBucketLifecycleRequest.cs" />
+    <Compile Include="Model\Bucket\PutBucketLifecycleResult.cs" />
+    <Compile Include="Model\Bucket\PutBucketReplicationRequest.cs" />
+    <Compile Include="Model\Bucket\PutBucketReplicationResult.cs" />
+    <Compile Include="Model\Bucket\PutBucketRequest.cs" />
+    <Compile Include="Model\Bucket\PutBucketResult.cs" />
+    <Compile Include="Model\Bucket\PutBucketVersioningRequest.cs" />
+    <Compile Include="Model\Bucket\PutBucketVersioningResult.cs" />
     <Compile Include="Model\CosRequest.cs" />
     <Compile Include="Model\CosResult.cs" />
+    <Compile Include="Model\Object\AbortMultiUploadRequest.cs" />
+    <Compile Include="Model\Object\AbortMultiUploadResult.cs" />
+    <Compile Include="Model\Object\AppendObjectRequest.cs" />
+    <Compile Include="Model\Object\ObjectRequest.cs" />
     <Compile Include="Model\Service\GetServiceRequest.cs" />
     <Compile Include="Model\Service\GetServiceResult.cs" />
     <Compile Include="Model\Tag\AccessControlPolicy.cs" />
     <Compile Include="Model\Tag\CORSConfiguration.cs" />
+    <Compile Include="Model\Tag\LifecycleConfiguration.cs" />
     <Compile Include="Model\Tag\ListAllMyBuckets.cs" />
+    <Compile Include="Model\Tag\ListBucket.cs" />
+    <Compile Include="Model\Tag\ListBucketVersions.cs" />
+    <Compile Include="Model\Tag\ListMultipartUploads.cs" />
+    <Compile Include="Model\Tag\LocationConstraint.cs" />
+    <Compile Include="Model\Tag\ReplicationConfiguration.cs" />
+    <Compile Include="Model\Tag\VersioningConfiguration.cs" />
     <Compile Include="Network\Request.cs" />
     <Compile Include="Network\RequestBody.cs" />
     <Compile Include="Network\Response.cs" />
     <Compile Include="Network\ResponseBody.cs" />
+    <Compile Include="Transfer\XmlBuilder.cs" />
+    <Compile Include="Transfer\XmlParse.cs" />
     <Compile Include="Utils\CosValueAttribute.cs" />
     <Compile Include="CosXmlServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\EnumUtils.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\Object\" />
-    <Folder Include="Transfer\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

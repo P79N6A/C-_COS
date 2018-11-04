@@ -13,8 +13,8 @@ namespace COSXML.Model.Bucket
     public sealed class GetBucketCORSRequest : BucketRequest
     {
         public GetBucketCORSRequest(string bucket)
+            : base(bucket)
         {
-            this.bucket = bucket;
             this.method = CosRequestMethod.GET;
             this.queryParameters.Add("cors", null);
         }

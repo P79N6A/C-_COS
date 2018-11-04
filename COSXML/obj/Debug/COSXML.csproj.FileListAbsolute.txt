@@ -2,3 +2,7 @@ E:\TencentWork\C#_Terminate\COSXML\COSXML\bin\Debug\COSXML.dll
 E:\TencentWork\C#_Terminate\COSXML\COSXML\bin\Debug\COSXML.pdb
 E:\TencentWork\C#_Terminate\COSXML\COSXML\obj\Debug\COSXML.dll
 E:\TencentWork\C#_Terminate\COSXML\COSXML\obj\Debug\COSXML.pdb
+E:\gitHub\C#_COS\COSXML\obj\Debug\COSXML.dll
+E:\gitHub\C#_COS\COSXML\obj\Debug\COSXML.pdb
+E:\gitHub\C#_COS\COSXML\bin\Debug\COSXML.dll
+E:\gitHub\C#_COS\COSXML\bin\Debug\COSXML.pdb

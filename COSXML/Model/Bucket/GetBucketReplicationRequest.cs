@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-/**
-* Copyright (c) 2018 Tencent Cloud. All rights reserved.
-* 11/2/2018 10:10:24 PM
-* bradyxiao
-*/
+using COSXML.Common;
+
 namespace COSXML.Model.Bucket
 {
-    class GetBucketReplicationRequest
+    public sealed class GetBucketReplicationRequest : BucketRequest
     {
+        public GetBucketReplicationRequest(string bucket)
+            : base(bucket)
+        {
+            this.method = CosRequestMethod.GET;
+            this.queryParameters.Add("replication", null);
+        }
     }
 }

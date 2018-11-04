@@ -7,7 +7,7 @@ using System.Text;
 * 11/2/2018 5:50:56 PM
 * bradyxiao
 */
-namespace COSXML.Model.ServiceTag
+namespace COSXML.Model.Tag
 {
     public sealed class GetServiceResult : CosResult
     {

@@ -7,6 +7,9 @@ using COSXML.Utils;
 using COSXML.Log;
 using COSXML.CosException;
 using COSXML.Common;
+using System.IO;
+using COSXML.Model.Tag;
+using COSXML.Transfer;
 
 namespace Demo
 {
@@ -48,12 +51,79 @@ namespace Demo
                 QLog.E(TAG, ex.ToString(), ex);
             }
             */
+            /**
             SupperA supper = new SubB();
             supper.commonMethod();
             supper.virtualMethod();
             SupperA.staticMethod();
+            */
+
+            /**
+            string content = "<ListAllMyBucketsResult>"
+                        + "<Owner>"
+                        + " <ID>qcs::cam::uin/1147518609:uin/1147518609</ID>"
+                        + "<DisplayName>1147518609</DisplayName>"
+                        + " </Owner>"
+                        + "<Buckets>"
+                            + "<Bucket>"
+                                + "<Name>01</Name>"
+                                + "<Location>ap-beijing</Location>"
+                                + "<CreateDate>2016-09-13 15:20:15</CreateDate>"
+                            + "</Bucket>"
+                            + "<Bucket>"
+                                + "<Name>0111</Name>"
+                                + "<Location>ap-hongkong</Location>"
+                                + "<CreateDate>2017-01-11 17:23:51</CreateDate>"
+                            + "</Bucket>"
+                            + "<Bucket>"
+                                + "<Name>1201new</Name>"
+                                + "<Location>eu-frankfurt</Location>"
+                                + "<CreateDate>2016-12-01 09:45:02</CreateDate>"
+                            + "</Bucket>"
+                        + "</Buckets>"
+                    + "</ListAllMyBucketsResult>";
+
+            byte[] bytes = Encoding.ASCII.GetBytes(content);
+            MemoryStream memoryStream = new MemoryStream(bytes);
+            ListAllMyBuckets result = new ListAllMyBuckets();
+            XmlParse.ParseListAllMyBucketsResult(memoryStream, result);
+            //QLog.D("XIAO", result.GetInfo(), null);
+            Console.WriteLine(result.GetInfo());
+            */
+
+            testCORSCOnfig();
 
             Console.ReadKey();
+        }
+
+        public static void testCORSCOnfig()
+        {
+            CORSConfiguration corsConfig = new CORSConfiguration();
+            corsConfig.corsRules = new List<CORSConfiguration.CORSRule>();
+            for (int i = 0; i < 3; i++)
+            {
+                CORSConfiguration.CORSRule corsRule = new CORSConfiguration.CORSRule();
+                corsRule.id = (i + 1).ToString();
+                corsRule.allowedOrigin = "http://www.cloud.tencent.com";
+                corsRule.maxAgeSeconds = 5000;
+
+                corsRule.allowedMethods = new List<string>();
+                corsRule.allowedMethods.Add("PUT");
+                corsRule.allowedMethods.Add("GET");
+                corsRule.allowedMethods.Add("DELETE");
+
+                corsRule.allowedHeaders = new List<string>();
+                corsRule.allowedHeaders.Add("Host");
+                corsRule.allowedHeaders.Add("Authorizition");
+                corsRule.allowedHeaders.Add("Content-Length");
+
+                corsRule.exposeHeaders = new List<string>();
+                corsRule.exposeHeaders.Add("X-COS-Meta1");
+                corsRule.exposeHeaders.Add("X-COS-Meta2");
+                corsRule.exposeHeaders.Add("X-COS-Meta2");
+                corsConfig.corsRules.Add(corsRule);
+            }
+            Console.WriteLine(XmlBuilder.BuildCORSConfigXML(corsConfig));
         }
     }
 
@@ -92,7 +162,7 @@ namespace Demo
             filed = "sub";
             staticFiled = "sub static";
         }
-        public void commonMethod()
+        public new void commonMethod()
         {
             Console.WriteLine("this is sub common method: " + filed);
         }
@@ -102,7 +172,7 @@ namespace Demo
             Console.WriteLine("this is sub virtual method: " + filed);
         }
 
-        public static void staticMethod()
+        public new static void staticMethod()
         {
             Console.WriteLine("this is sub static method: " + staticFiled);
         }

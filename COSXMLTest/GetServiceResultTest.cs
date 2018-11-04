@@ -1,4 +1,4 @@
-﻿using COSXML.Model.ServiceTag;
+﻿using COSXML.Model.Tag;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using COSXML.Network;

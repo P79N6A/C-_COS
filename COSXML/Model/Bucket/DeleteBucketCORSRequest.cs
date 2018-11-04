@@ -12,9 +12,8 @@ namespace COSXML.Model.Bucket
 {
     public sealed class DeleteBucketCORSRequest : BucketRequest
     {
-        public DeleteBucketCORSRequest(string bucket)
+        public DeleteBucketCORSRequest(string bucket) : base(bucket)
         {
-            this.bucket = bucket;
             this.method = CosRequestMethod.DELETE;
             this.queryParameters.Add("cors", null);
         }

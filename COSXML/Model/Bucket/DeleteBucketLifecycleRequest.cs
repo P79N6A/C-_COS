@@ -13,8 +13,8 @@ namespace COSXML.Model.Bucket
     public sealed class DeleteBucketLifecycleRequest : BucketRequest
     {
         public DeleteBucketLifecycleRequest(string bucket)
+            : base(bucket)
         {
-            this.bucket = bucket;
             this.method = CosRequestMethod.DELETE;
             this.queryParameters.Add("lifecycle", null);
         }

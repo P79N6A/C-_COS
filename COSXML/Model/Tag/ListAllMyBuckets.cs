@@ -7,7 +7,7 @@ using System.Text;
 * 11/2/2018 5:52:22 PM
 * bradyxiao
 */
-namespace COSXML.Model.ServiceTag
+namespace COSXML.Model.Tag
 {
     public sealed class ListAllMyBuckets
     {
@@ -25,38 +25,39 @@ namespace COSXML.Model.ServiceTag
             stringBuilder.Append("}").Append("\n");
             stringBuilder.Append("}");
             return stringBuilder.ToString();
+         }
+
+        public sealed class Owner
+        {
+            public string id;
+            public string disPlayName;
+
+            public string GetInfo()
+            {
+                StringBuilder stringBuilder = new StringBuilder("{Owner:\n");
+                stringBuilder.Append("ID:").Append(id).Append("\n");
+                stringBuilder.Append("DisPlayName:").Append(disPlayName).Append("\n");
+                stringBuilder.Append("}");
+                return stringBuilder.ToString();
             }
-        
-    }
+        }
 
-    public sealed class Owner
-    {
-        public string id;
-        public string disPlayName;
-
-        public string GetInfo()
+        public sealed class Bucket
         {
-            StringBuilder stringBuilder = new StringBuilder("{Owner:\n");
-            stringBuilder.Append("ID:").Append(id).Append("\n");
-            stringBuilder.Append("DisPlayName:").Append(disPlayName).Append("\n");
-            stringBuilder.Append("}");
-            return stringBuilder.ToString();
+            public string name;
+            public string location;
+            public string createDate;
+            public string GetInfo()
+            {
+                StringBuilder stringBuilder = new StringBuilder("{Bucket:\n");
+                stringBuilder.Append("Name:").Append(name).Append("\n");
+                stringBuilder.Append("Location:").Append(location).Append("\n");
+                stringBuilder.Append("CreateDate:").Append(createDate).Append("\n");
+                stringBuilder.Append("}");
+                return stringBuilder.ToString();
+            }
         }
     }
 
-    public sealed class Bucket
-    {
-        public string name;
-        public string location;
-        public string createDate;
-        public string GetInfo()
-        {
-            StringBuilder stringBuilder = new StringBuilder("{Bucket:\n");
-            stringBuilder.Append("Name:").Append(name).Append("\n");
-            stringBuilder.Append("Location:").Append(location).Append("\n");
-            stringBuilder.Append("CreateDate:").Append(createDate).Append("\n");
-            stringBuilder.Append("}");
-            return stringBuilder.ToString();
-        }
-    }
+    
 }

@@ -13,12 +13,20 @@ namespace COSXML.Model.Bucket
 {
     /**
      * Buceket request for cos
+     * base class
+     * provider bucket,region property
      */
     public abstract class BucketRequest : CosRequest
     {
         protected string bucket;
 
         protected string region;
+
+        public BucketRequest(string bucket)
+        {
+            this.bucket = bucket;
+            this.path = "/";
+        }
 
         public void SetBucket(string bucket)
         {
