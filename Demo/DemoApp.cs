@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using COSXML;
-using COSXML.Utils;
+using COSXML.Common;
 using COSXML.Log;
 using COSXML.CosException;
-using COSXML.Common;
 using System.IO;
 using COSXML.Model.Tag;
 using COSXML.Transfer;
+using COSXML.Utils;
+using COSXML.Mdel.Tag;
 
 namespace Demo
 {
@@ -91,9 +92,99 @@ namespace Demo
             Console.WriteLine(result.GetInfo());
             */
 
-            testCORSCOnfig();
+            //testCORSCOnfig();
+
+            //testAccessControlPolicy();
+            // testCORSConfig();
+            //testLifeCycleConfig();
+            testGrantAccount();
 
             Console.ReadKey();
+        }
+
+        public static void testGrantAccount()
+        {
+            GrantAccount grantAccount = new GrantAccount();
+            grantAccount.AddGrantAccount("1131975903", "1131975903");
+            grantAccount.AddGrantAccount("333", "555");
+            grantAccount.AddGrantAccount("666", "777");
+            Console.WriteLine(grantAccount.GetGrantAccounts());
+        }
+
+        public static void testLifeCycleConfig()
+        {
+            LifecycleConfiguration lifeCycleConfig = new LifecycleConfiguration();
+            lifeCycleConfig.rules = new System.Collections.Generic.List<LifecycleConfiguration.Rule>();
+            for (int i = 0; i < 3; i++)
+            {
+                LifecycleConfiguration.Rule rule = new LifecycleConfiguration.Rule();
+                rule.id = String.Format("the {0}th", i + 1);
+                rule.filter = new LifecycleConfiguration.Filter();
+                rule.filter.prefix = "filter prefix";
+                rule.status = "Enabled";
+                rule.abortIncompleteMultiUpload = new LifecycleConfiguration.AbortIncompleteMultiUpload();
+                rule.abortIncompleteMultiUpload.daysAfterInitiation = 2;
+                rule.expiration = new LifecycleConfiguration.Expiration();
+                rule.expiration.date = DateTime.Now.ToString();
+                rule.expiration.days = 2;
+                rule.transition = new LifecycleConfiguration.Transition();
+                rule.transition.date = DateTime.Now.ToString();
+                rule.transition.days = 2;
+                rule.noncurrentVersionExpiration = new LifecycleConfiguration.NoncurrentVersionExpiration();
+                rule.noncurrentVersionExpiration.noncurrentDays = 2;
+                rule.noncurrentVersionTransition = new LifecycleConfiguration.NoncurrentVersionTransition();
+                rule.noncurrentVersionTransition.noncurrentDays = 2;
+                rule.noncurrentVersionTransition.storageClass = EnumUtils.GetValue(CosStorageClass.STANDARD);
+                lifeCycleConfig.rules.Add(rule);
+            }
+            Console.WriteLine(lifeCycleConfig.GetInfo());
+        }
+
+        public static void testCORSConfig()
+        {
+            CORSConfiguration corsConfig = new CORSConfiguration();
+            corsConfig.corsRules = new System.Collections.Generic.List<CORSConfiguration.CORSRule>();
+            for (int i = 0; i < 3; i++)
+            {
+                CORSConfiguration.CORSRule corsRule = new CORSConfiguration.CORSRule();
+                corsRule.id = String.Format("the {0}th", i + 1);
+                corsRule.maxAgeSeconds = 5000;
+                corsRule.allowedMethods = new System.Collections.Generic.List<string>();
+                corsRule.allowedMethods.Add("PUT");
+                corsRule.allowedMethods.Add("DELETE");
+
+                corsRule.allowedHeaders = new System.Collections.Generic.List<string>();
+                corsRule.allowedHeaders.Add("Host");
+                corsRule.allowedHeaders.Add("Authorization");
+
+                corsRule.exposeHeaders = new System.Collections.Generic.List<string>();
+                corsRule.exposeHeaders.Add("X-COS-Meta1");
+                corsRule.exposeHeaders.Add("X-COS-Meta2");
+
+                corsConfig.corsRules.Add(corsRule);
+            }
+            Console.WriteLine(corsConfig.GetInfo());
+        }
+
+        public static void testAccessControlPolicy()
+        {
+            AccessControlPolicy accessControlPolicy = new AccessControlPolicy();
+            accessControlPolicy.owner = new AccessControlPolicy.Owner();
+            accessControlPolicy.accessControlList = new AccessControlPolicy.AccessControlList();
+            accessControlPolicy.accessControlList.grants = new List<AccessControlPolicy.Grant>();
+            accessControlPolicy.owner.id = "qcs::cam::uin/<OwnerUin>:uin/<SubUin>";
+            accessControlPolicy.owner.displayName = "qcs::cam::uin/<OwnerUin>:uin/<SubUin>";
+            for (int i = 0; i < 3; i++)
+            {
+                AccessControlPolicy.Grant grant = new AccessControlPolicy.Grant();
+                grant.grantee = new AccessControlPolicy.Grantee();
+                grant.grantee.id = "qcs::cam::uin/<OwnerUin>:uin/<SubUin>";
+                grant.grantee.displayName = "qcs::cam::uin/<OwnerUin>:uin/<SubUin>";
+                grant.permission = "permission";
+                accessControlPolicy.accessControlList.grants.Add(grant);
+            }
+            Console.WriteLine(accessControlPolicy.GetInfo());
+
         }
 
         public static void testCORSCOnfig()

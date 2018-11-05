@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using COSXML.Common;
 using COSXML.Utils;
 /**
 * Copyright (c) 2018 Tencent Cloud. All rights reserved.

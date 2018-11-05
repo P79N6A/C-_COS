@@ -9,11 +9,12 @@ namespace COSXML.Model.Tag
     {
         public string location;
 
-        public string GetInfo(){
+        public string GetInfo()
+        {
             StringBuilder stringBuilder = new StringBuilder("{LocationConstraint:\n");
             stringBuilder.Append("Location:").Append(location).Append("\n");
             stringBuilder.Append("}");
             return stringBuilder.ToString();
-    }
+        }
     }
 }

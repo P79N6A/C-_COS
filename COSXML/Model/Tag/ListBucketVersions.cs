@@ -100,7 +100,8 @@ namespace COSXML.Model.Tag
                 stringBuilder.Append("ETag:").Append(eTag).Append("\n");
                 stringBuilder.Append("Size:").Append(size).Append("\n");
                 stringBuilder.Append("StorageClass:").Append(storageClass).Append("\n");
-                if(owner != null){
+                if(owner != null)
+                {
                     stringBuilder.Append(owner.GetInfo()).Append("\n");
                 }
                 stringBuilder.Append("}");

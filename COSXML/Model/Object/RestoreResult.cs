@@ -5,7 +5,8 @@ using System.Text;
 
 namespace COSXML.Model.Object
 {
-    class RestoreResult
+    public sealed class RestoreResult : CosResult
     {
+
     }
 }

@@ -8,7 +8,7 @@ using COSXML.Common;
 * 11/2/2018 5:25:23 PM
 * bradyxiao
 */
-namespace COSXML.Model.Tag
+namespace COSXML.Model.Service
 {
     public sealed class GetServiceRequest : CosRequest
     {

@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using COSXML.Network;
+using COSXML.Model.Service;
 
 namespace COSXMLTest
 {

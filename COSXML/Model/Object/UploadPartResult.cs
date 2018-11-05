@@ -5,7 +5,13 @@ using System.Text;
 
 namespace COSXML.Model.Object
 {
-    class UploadPartResult
+    public sealed class UploadPartResult : CosResult
     {
+        public string eTag;
+
+        public override void ParseResponse(Network.Response response)
+        {
+            base.ParseResponse(response);
+        }
     }
 }

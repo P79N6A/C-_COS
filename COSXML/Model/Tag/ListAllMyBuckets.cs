@@ -19,8 +19,12 @@ namespace COSXML.Model.Tag
             StringBuilder stringBuilder = new StringBuilder("{ListAllMyBuckets:\n");
             if (owner != null) stringBuilder.Append(owner.GetInfo()).Append("\n");
             stringBuilder.Append("Buckets:\n");
-            foreach(Bucket bucket in buckets){
-                if (bucket != null) stringBuilder.Append(bucket.GetInfo()).Append("\n");
+            if (buckets != null)
+            {
+                foreach (Bucket bucket in buckets)
+                {
+                    if (bucket != null) stringBuilder.Append(bucket.GetInfo()).Append("\n");
+                }
             }
             stringBuilder.Append("}").Append("\n");
             stringBuilder.Append("}");

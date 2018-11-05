@@ -65,11 +65,11 @@ namespace COSXML.Model.Bucket
         {
             if (bucket == null)
             {
-                throw new CosClientException((int)CosClientError.INVALIDARGUMENT, "bucket is null");
+                throw new CosClientException((int)CosClientError.INVALID_ARGUMENT, "bucket is null");
             }
             if (region == null)
             {
-                throw new CosClientException((int)CosClientError.INVALIDARGUMENT, "region is null");
+                throw new CosClientException((int)CosClientError.INVALID_ARGUMENT, "region is null");
             }
         }
     }

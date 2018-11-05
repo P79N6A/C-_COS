@@ -12,7 +12,8 @@ namespace COSXML.Model.Tag
         public string GetInfo()
         {
             StringBuilder stringBuilder = new StringBuilder("{LifecycleConfiguration:\n");
-            if(rules != null){
+            if(rules != null)
+            {
                 foreach (Rule rule in rules){
                     if(rule != null) stringBuilder.Append(rule.GetInfo()).Append("\n");
                 }

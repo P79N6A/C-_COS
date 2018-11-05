@@ -11,7 +11,7 @@ namespace COSXML.Model.Object
     {
         private string uploadId;
 
-        public AbortMultiUploadRequest(string bucket, string cosPath, string uploadId) : base(bucket, cosPath)
+        public AbortMultiUploadRequest(string bucket, string key, string uploadId) : base(bucket, key)
         {
             this.uploadId = uploadId;
             this.method = CosRequestMethod.DELETE;
@@ -32,7 +32,7 @@ namespace COSXML.Model.Object
             base.CheckParameters();
             if (uploadId == null)
             {
-                throw new CosClientException((int)CosClientError.INVALIDARGUMENT, "uploadId is null");
+                throw new CosClientException((int)CosClientError.INVALID_ARGUMENT, "uploadId is null");
             }
         }
 

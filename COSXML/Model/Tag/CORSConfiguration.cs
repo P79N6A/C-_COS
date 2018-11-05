@@ -9,16 +9,17 @@ namespace COSXML.Model.Tag
     {
         public List<CORSRule> corsRules;
 
-        public string GetInfo(){
-        StringBuilder stringBuilder = new StringBuilder("{CORSConfiguration:\n");
-        if(corsRules != null){
-            foreach(CORSRule corsRule in corsRules){
-                if(corsRule != null) stringBuilder.Append(corsRule.GetInfo()).Append("\n");
+        public string GetInfo()
+        {
+            StringBuilder stringBuilder = new StringBuilder("{CORSConfiguration:\n");
+            if(corsRules != null){
+                foreach(CORSRule corsRule in corsRules){
+                    if(corsRule != null) stringBuilder.Append(corsRule.GetInfo()).Append("\n");
+                }
             }
+            stringBuilder.Append("}");
+            return stringBuilder.ToString();
         }
-        stringBuilder.Append("}");
-        return stringBuilder.ToString();
-    }
 
 
         public sealed class CORSRule
@@ -30,7 +31,8 @@ namespace COSXML.Model.Tag
             public List<string> exposeHeaders;
             public int maxAgeSeconds;
 
-            public string GetInfo(){
+            public string GetInfo()
+            {
                 StringBuilder stringBuilder = new StringBuilder("{CORSRule:\n");
                 stringBuilder.Append("ID:").Append(id).Append("\n");
                 stringBuilder.Append("AllowedOrigin:").Append(allowedOrigin).Append("\n");

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using COSXML.Common;
 using COSXML.Utils;
+using COSXML.Mdel.Tag;
+
 
 namespace COSXML.Model.Bucket
 {

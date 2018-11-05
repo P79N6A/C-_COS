@@ -10,11 +10,14 @@ namespace COSXML.Model.Tag
         public string role;
         public List<Rule> rules;
 
-        public string GetInfo(){
+        public string GetInfo()
+        {
             StringBuilder stringBuilder = new StringBuilder("{ReplicationConfiguration:\n");
             stringBuilder.Append("Role:").Append(role).Append("\n");
-            if(rules != null){
-                foreach(Rule rule in rules){
+            if(rules != null)
+            {
+                foreach(Rule rule in rules)
+                {
                     if (rule != null) stringBuilder.Append(rule.GetInfo()).Append("\n");
                 }
             }

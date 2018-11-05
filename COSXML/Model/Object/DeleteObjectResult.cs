@@ -5,7 +5,7 @@ using System.Text;
 
 namespace COSXML.Model.Object
 {
-    class DeleteObjectResult
+    public sealed class DeleteObjectResult : CosResult
     {
     }
 }

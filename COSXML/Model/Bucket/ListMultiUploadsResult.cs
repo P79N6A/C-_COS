@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using COSXML.Model.Tag;
 
-namespace COSXML.Model.Bucket
+namespace COSXML.Model.Tag
 {
     public sealed class ListMultiUploadsResult : CosResult
     {

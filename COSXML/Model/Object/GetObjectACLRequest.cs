@@ -2,10 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using COSXML.Common;
 
 namespace COSXML.Model.Object
 {
-    class GetObjectACLRequest
+    public sealed class GetObjectACLRequest : ObjectRequest
     {
+        public GetObjectACLRequest(string bucket, string key)
+            : base(bucket, key)
+        {
+            this.method = CosRequestMethod.GET;
+            this.queryParameters.Add("acl", null);
+        }
     }
 }

@@ -127,5 +127,29 @@ namespace COSXMLTest
             Assert.AreEqual(3, result.buckets.Count);
  
         }
+
+        /// <summary>
+        ///A test for ListAllMyBuckets Constructor
+        ///</summary>
+        [TestMethod()]
+        public void ListAllMyBucketsConstructorTest1()
+        {
+            ListAllMyBuckets target = new ListAllMyBuckets();
+            Assert.Inconclusive("TODO: Implement code to verify target");
+        }
+
+        /// <summary>
+        ///A test for GetInfo
+        ///</summary>
+        [TestMethod()]
+        public void GetInfoTest1()
+        {
+            ListAllMyBuckets target = new ListAllMyBuckets(); // TODO: Initialize to an appropriate value
+            string expected = string.Empty; // TODO: Initialize to an appropriate value
+            string actual;
+            actual = target.GetInfo();
+            Assert.AreEqual(expected, actual);
+            Assert.Inconclusive("Verify the correctness of this test method.");
+        }
     }
 }

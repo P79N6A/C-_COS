@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using COSXML.Common;
 using COSXML.Utils;
 /**
 * Copyright (c) 2018 Tencent Cloud. All rights reserved.
@@ -13,33 +14,33 @@ namespace COSXML.Common
     public enum CosClientError
     {
         [CosValue("InvalidArgument")]
-        INVALIDARGUMENT = 10000,
+        INVALID_ARGUMENT = 10000,
 
         [CosValue("InvalidCredentials")]
-        INVALIDCREDENTIALS = 10001,
+        INVALID_CREDENTIALS = 10001,
 
         [CosValue("BadRequest")]
-        BADREQUEST = 10002,
+        BAD_REQUEST = 10002,
 
         [CosValue("SinkSourceNotFound")]
-        SINKSOURCENOTFOUND = 10003,
+        SINK_SOURCE_NOT_FOUND = 10003,
 
         [CosValue("InternalError")]
-        INTERNALERROR = 20000,
+        INTERNA_LERROR = 20000,
 
         [CosValue("ServerError")]
-        SERVERERROR = 20001,
+        SERVER_ERROR = 20001,
 
         [CosValue("IOError")]
-        IOERROR = 20002,
+        IO_ERROR = 20002,
 
         [CosValue("PoorNetwork")]
-        POORNETWORK = 20003,
+        POOR_NETWORK = 20003,
 
         [CosValue("UserCancelled")]
-        USERCANCELLED = 30000,
+        USER_CANCELLED = 30000,
 
         [CosValue("AlreadyFinished")]
-        ALREADYFINISHED = 30001,
+        ALREADY_FINISHED = 30001,
     }
 }

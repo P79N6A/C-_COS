@@ -20,7 +20,8 @@ namespace COSXML.Model.Tag
         public string delimiter;
 
     
-        public string GetInfo(){
+        public string GetInfo()
+        {
             StringBuilder stringBuilder = new StringBuilder("{ListBucket:\n");
             stringBuilder.Append("Name:").Append(name).Append("\n");
             stringBuilder.Append("Encoding-Type:").Append(encodingType).Append("\n");
@@ -29,13 +30,17 @@ namespace COSXML.Model.Tag
             stringBuilder.Append("MaxKeys:").Append(maxKeys).Append("\n");
             stringBuilder.Append("IsTruncated:").Append(isTruncated).Append("\n");
             stringBuilder.Append("NextMarker:").Append(nextMarker).Append("\n");
-            if(contentsList != null){
-                foreach (Contents contents in contentsList){
+            if(contentsList != null)
+            {
+                foreach (Contents contents in contentsList)
+                {
                     if(contents != null)stringBuilder.Append(contents.GetInfo()).Append("\n");
                 }
             }
-            if(commonPrefixesList != null){
-                foreach (CommonPrefixes commonPrefixes in commonPrefixesList){
+            if(commonPrefixesList != null)
+            {
+                foreach (CommonPrefixes commonPrefixes in commonPrefixesList)
+                {
                     if(commonPrefixes != null)stringBuilder.Append(commonPrefixes.GetInfo()).Append("\n");
                 }
             }
@@ -53,7 +58,8 @@ namespace COSXML.Model.Tag
             public string storageClass;
 
         
-            public string GetInfo(){
+            public string GetInfo()
+            {
                 StringBuilder stringBuilder = new StringBuilder("{Contents:\n");
                 stringBuilder.Append("Key:").Append(key).Append("\n");
                 stringBuilder.Append("LastModified:").Append(lastModified).Append("\n");
@@ -82,7 +88,8 @@ namespace COSXML.Model.Tag
         public sealed class Owner{
             public string id;
 
-            public string GetInfo(){
+            public string GetInfo()
+            {
                 StringBuilder stringBuilder = new StringBuilder("{Owner:\n");
                 stringBuilder.Append("Id:").Append(id).Append("\n");
                 stringBuilder.Append("}");

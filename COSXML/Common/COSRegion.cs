@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using COSXML.Utils;
 /**
 * Copyright (c) 2018 Tencent Cloud. All rights reserved.
 * 11/1/2018 9:48:15 PM
 * bradyxiao
 */
-namespace COSXML.Utils
+namespace COSXML.Common
 {
     public enum CosRegion
     {

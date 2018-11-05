@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace COSXML.Common
+namespace COSXML.Mdel.Tag
 {
     public sealed class GrantAccount
     {
@@ -16,7 +16,7 @@ namespace COSXML.Common
         {
             if (ownerUin != null && subUin != null)
             {
-                idList.Add(String.Format("id=\"qcs::cam::uin/%s:uin/%s\"", ownerUin, subUin));
+                idList.Add(String.Format("id=\"qcs::cam::uin/{0}:uin/{1}\"", ownerUin, subUin));
             }
         }
 

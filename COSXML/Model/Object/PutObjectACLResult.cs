@@ -5,7 +5,8 @@ using System.Text;
 
 namespace COSXML.Model.Object
 {
-    class PutObjectACLResult
+    public sealed class PutObjectACLResult : CosResult
     {
+
     }
 }

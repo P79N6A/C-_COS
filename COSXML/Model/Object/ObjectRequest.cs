@@ -13,16 +13,16 @@ namespace COSXML.Model.Object
 
         protected string region;
 
-        public ObjectRequest(string bucket, string cosPath)
+        public ObjectRequest(string bucket, string key)
         {
             this.bucket = bucket;
-            if (cosPath != null && !cosPath.StartsWith("/"))
+            if (key != null && !key.StartsWith("/"))
             {
-                this.path = "/" + cosPath;
+                this.path = "/" + key;
             }
             else 
             {
-                this.path = cosPath;
+                this.path = key;
             }
         }
 
@@ -36,9 +36,16 @@ namespace COSXML.Model.Object
             this.region = region;
         }
 
-        public void SetCosPath(string cosPath)
+        public virtual void SetCosPath(string key)
         {
-            this.path = cosPath;
+            if (key != null && !key.StartsWith("/"))
+            {
+                this.path = "/" + key;
+            }
+            else
+            {
+                this.path = key;
+            }
         }
 
         public override Network.RequestBody GetRequestBody()
@@ -68,15 +75,15 @@ namespace COSXML.Model.Object
         {
             if (bucket == null)
             {
-                throw new CosClientException((int)CosClientError.INVALIDARGUMENT, "bucket is null");
+                throw new CosClientException((int)CosClientError.INVALID_ARGUMENT, "bucket is null");
             }
             if (region == null)
             {
-                throw new CosClientException((int)CosClientError.INVALIDARGUMENT, "region is null");
+                throw new CosClientException((int)CosClientError.INVALID_ARGUMENT, "region is null");
             }
             if (path == null)
             {
-                throw new CosClientException((int)CosClientError.INVALIDARGUMENT, "cosPath is null");
+                throw new CosClientException((int)CosClientError.INVALID_ARGUMENT, "cosPath is null");
             }
 
         }
@@ -85,10 +92,18 @@ namespace COSXML.Model.Object
         { 
         }
 
+        protected virtual void InteranlUpdateHeaders() { }
+
         public override Dictionary<string, string> GetRequestParamters()
         {
             InternalUpdateQueryParameters();
             return base.GetRequestParamters();
+        }
+
+        public override Dictionary<string, string> GetRequestHeaders()
+        {
+            InteranlUpdateHeaders();
+            return base.GetRequestHeaders();
         }
 
 
