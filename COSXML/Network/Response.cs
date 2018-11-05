@@ -11,6 +11,7 @@ namespace COSXML.Network
 {
     public sealed class Response
     {
-
+        protected string method;
+       
     }
 }

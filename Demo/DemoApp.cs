@@ -11,6 +11,7 @@ using COSXML.Model.Tag;
 using COSXML.Transfer;
 using COSXML.Utils;
 using COSXML.Mdel.Tag;
+using Demo.test;
 
 namespace Demo
 {
@@ -97,9 +98,17 @@ namespace Demo
             //testAccessControlPolicy();
             // testCORSConfig();
             //testLifeCycleConfig();
-            testGrantAccount();
+            //testGrantAccount();
 
             Console.ReadKey();
+        }
+
+        public void test()
+        {
+            Test test = new Test();
+            test.publicValue = "public value";
+            test.internaleValue = "internal value";
+            test.protectedInternalValue = "protected interanal value";
         }
 
         public static void testGrantAccount()
@@ -215,6 +224,17 @@ namespace Demo
                 corsConfig.corsRules.Add(corsRule);
             }
             Console.WriteLine(XmlBuilder.BuildCORSConfigXML(corsConfig));
+        }
+    }
+
+    class TestSub : Test
+    {
+        public TestSub()
+        {
+            this.internaleValue = "internal value";
+            this.protectedInternalValue = "protected internal value";
+            this.protectedValue = "protected value";
+            this.publicValue = "public value";
         }
     }
 

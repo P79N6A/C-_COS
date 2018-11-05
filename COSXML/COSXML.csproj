@@ -165,6 +165,7 @@
     <Compile Include="Model\Tag\ReplicationConfiguration.cs" />
     <Compile Include="Model\Tag\RestoreConfigure.cs" />
     <Compile Include="Model\Tag\VersioningConfiguration.cs" />
+    <Compile Include="Network\Headers.cs" />
     <Compile Include="Network\Request.cs" />
     <Compile Include="Network\RequestBody.cs" />
     <Compile Include="Network\Response.cs" />
