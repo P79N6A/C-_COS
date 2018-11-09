@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using COSXML.Common;
 
@@ -18,7 +18,7 @@ namespace COSXML.Model.Bucket
         {
             if (prefix != null)
             {
-                AddQueryParameter("prefix", prefix);
+                SetQueryParameter("prefix", prefix);
             }
         }
 
@@ -26,7 +26,7 @@ namespace COSXML.Model.Bucket
         {
             if (delimiter != null)
             {
-                AddQueryParameter("delimiter", delimiter);
+                SetQueryParameter("delimiter", delimiter);
             }
         }
 
@@ -34,7 +34,7 @@ namespace COSXML.Model.Bucket
         {
             if (encodingType != null)
             {
-                AddQueryParameter("encoding-type", encodingType);
+                SetQueryParameter("encoding-type", encodingType);
             }
         }
 
@@ -42,7 +42,7 @@ namespace COSXML.Model.Bucket
         {
             if (marker != null)
             {
-                AddQueryParameter("marker", marker);
+                SetQueryParameter("marker", marker);
             }
         }
 
@@ -50,7 +50,7 @@ namespace COSXML.Model.Bucket
         {
             if (maxKeys != null)
             {
-                AddQueryParameter("max-keys", maxKeys);
+                SetQueryParameter("max-keys", maxKeys);
             }
         }
     }

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using System.IO;
 using System.Threading;
@@ -33,6 +33,11 @@ namespace COSXML.Log
             QLog.level = level;
         }
 
+        public static void V(string tag, string message)
+        {
+            V(tag, message, null);
+        }
+
         public static void V(string tag, string message, Exception exception)
         {
             if (LEVEL.V >= QLog.level)
@@ -42,6 +47,11 @@ namespace COSXML.Log
             
         }
 
+        public static void D(string tag, string message)
+        {
+            D(tag, message, null);
+        }
+
         public static void D(string tag, string message, Exception exception)
         {
             if (LEVEL.D >= QLog.level)
@@ -49,6 +59,11 @@ namespace COSXML.Log
                 logImpl.PrintLog(FormatLogMessage(LEVEL.D, tag, message, exception));
             }
             
+        }
+
+        public static void I(string tag, string message)
+        {
+            I(tag, message, null);
         }
 
         public static void I(string tag, string message, Exception exception)
@@ -61,6 +76,11 @@ namespace COSXML.Log
             
         }
 
+        public static void W(string tag, string message)
+        {
+            W(tag, message, null);
+        }
+
         public static void W(string tag, string message, Exception exception)
         {
             if (LEVEL.W >= QLog.level)
@@ -68,6 +88,11 @@ namespace COSXML.Log
                 logImpl.PrintLog(FormatLogMessage(LEVEL.W, tag, message, exception));
             }
            
+        }
+
+        public static void E(string tag, string message)
+        {
+            E(tag, message, null);
         }
 
         public static void E(string tag, string message, Exception exception)

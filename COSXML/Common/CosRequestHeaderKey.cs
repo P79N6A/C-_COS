@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 
 namespace COSXML.Common
 {
     public sealed class CosRequestHeaderKey
     {
+        public static string COS_SESSION_TOKEN = "x-cos-security-token";
+        public static string AUTHORIZAIION = "Authorization";
         public static string X_COS_ACL = "x-cos-acl";
         public static string X_COS_GRANT_READ = "x-cos-grant-read";
         public static string X_COS_GRANT_WRITE = "x-cos-grant-write";

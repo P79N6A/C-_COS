@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using COSXML.Common;
 using COSXML.Network;
@@ -23,6 +23,8 @@ namespace COSXML.Model
      */
     public abstract class CosRequest
     {
+        protected bool isHttps = false;
+
         protected string method = CosRequestMethod.GET;
 
         protected string path;
@@ -33,14 +35,22 @@ namespace COSXML.Model
 
         protected string appid;
 
-        public string GetRequestMethod() 
+        public bool IsHttps 
         {
-            return method;
+            get { return isHttps; }
+            set { isHttps = value; }
         }
 
-        public string GetRequestPath() 
+        public string Method
         {
-            return path;
+            get { return method; }
+            private set { }
+        }
+
+        public string RequestPath 
+        {
+            get { return path; }
+            private set { }
         }
 
         public virtual Dictionary<string, string> GetRequestParamters()
@@ -54,21 +64,8 @@ namespace COSXML.Model
         }
 
         public abstract RequestBody GetRequestBody();
-        
 
-        /**
-        public void SetRequestMethod(string method)
-        {
-            this.method = method;
-        }
-
-        public void SetRequestPath(string path)
-        {
-            this.path = path;
-        }
-         */
-
-        public void AddQueryParameter(string key, string value)
+        public void SetQueryParameter(string key, string value)
         {
             if (key != null)
             {
@@ -83,7 +80,7 @@ namespace COSXML.Model
             }
         }
 
-        public void AddRequestHeader(string key, string value)
+        public void SetRequestHeader(string key, string value)
         {
             if (key != null)
             {

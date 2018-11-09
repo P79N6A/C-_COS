@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using COSXML.Common;
 using COSXML.CosException;
@@ -25,19 +25,19 @@ namespace COSXML.Model.Object
 
         public void SetMaxParts(int maxParts)
         {
-            AddQueryParameter(CosRequestHeaderKey.MAX_PARTS, maxParts.ToString());
+            SetQueryParameter(CosRequestHeaderKey.MAX_PARTS, maxParts.ToString());
         }
 
         public void SetPartNumberMarker(int partNumberMarker)
         {
-           AddQueryParameter(CosRequestHeaderKey.PART_NUMBER_MARKER, partNumberMarker.ToString());
+           SetQueryParameter(CosRequestHeaderKey.PART_NUMBER_MARKER, partNumberMarker.ToString());
         }
 
         public void SetEncodingType(string encodingType)
         {
             if (encodingType != null)
             {
-                AddQueryParameter(CosRequestHeaderKey.ENCODING_TYPE, encodingType);
+                SetQueryParameter(CosRequestHeaderKey.ENCODING_TYPE, encodingType);
             }  
         }
 

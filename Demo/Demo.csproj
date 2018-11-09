@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="DemoApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="test\InterfaceTest.cs" />
+    <Compile Include="test\NetworkTest.cs" />
     <Compile Include="test\Test.cs" />
   </ItemGroup>
   <ItemGroup>

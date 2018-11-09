@@ -10,8 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>COSXML</RootNamespace>
     <AssemblyName>COSXML</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auth\QCloudCredentialProvider.cs" />
+    <Compile Include="Auth\QCloudCredentials.cs" />
+    <Compile Include="Auth\QCloudSigner.cs" />
     <Compile Include="Common\CosACL.cs" />
     <Compile Include="Common\CosClientError.cs" />
     <Compile Include="Common\CosGrantPermission.cs" />
@@ -49,6 +53,7 @@
     <Compile Include="Common\CosRequestMethod.cs" />
     <Compile Include="Common\CosStorageClass.cs" />
     <Compile Include="Common\CosVersion.cs" />
+    <Compile Include="CosXmlConfig.cs" />
     <Compile Include="Model\Tag\CopySourceStruct.cs" />
     <Compile Include="Model\Tag\CosServerError.cs" />
     <Compile Include="Model\Tag\GrantAccount.cs" />
@@ -165,7 +170,12 @@
     <Compile Include="Model\Tag\ReplicationConfiguration.cs" />
     <Compile Include="Model\Tag\RestoreConfigure.cs" />
     <Compile Include="Model\Tag\VersioningConfiguration.cs" />
+    <Compile Include="Network\CommandTask.cs" />
+    <Compile Include="Network\HttpClient.cs" />
+    <Compile Include="Network\HttpClientConfig.cs" />
     <Compile Include="Network\Headers.cs" />
+    <Compile Include="Network\HttpMethod.cs" />
+    <Compile Include="Network\HttpUrl.cs" />
     <Compile Include="Network\Request.cs" />
     <Compile Include="Network\RequestBody.cs" />
     <Compile Include="Network\Response.cs" />
@@ -176,7 +186,9 @@
     <Compile Include="CosXmlServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\EnumUtils.cs" />
+    <Compile Include="Utils\HttpDateTimeUtils.cs" />
     <Compile Include="Utils\URLEncodeUtils.cs" />
+    <Compile Include="Utils\TimeUtils.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

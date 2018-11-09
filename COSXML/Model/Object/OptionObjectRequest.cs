@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using COSXML.Common;
 using COSXML.CosException;
@@ -45,7 +45,7 @@ namespace COSXML.Model.Object
                 if (accessControlHeaders.Count > 0)
                 {
                     headers.Remove(headers.Length - 1, 1);
-                    AddRequestHeader(CosRequestHeaderKey.ACCESS_CONTROL_REQUEST_HEADERS, headers.ToString());
+                    SetRequestHeader(CosRequestHeaderKey.ACCESS_CONTROL_REQUEST_HEADERS, headers.ToString());
                 }
             }
         }

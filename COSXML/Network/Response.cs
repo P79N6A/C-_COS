@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
+using System.IO;
 /**
 * Copyright (c) 2018 Tencent Cloud. All rights reserved.
 * 11/2/2018 4:39:49 PM
@@ -9,9 +10,18 @@ using System.Text;
 */
 namespace COSXML.Network
 {
-    public sealed class Response
+    public class Response
     {
-        protected string method;
+        public int Code { get; set; }
+
+        public string Message { get; set; }
+
+        public Dictionary<string, List<string>> Headers { get; set; }
+
+        public long ContentLength { get; set; }
+
+        public ResponseBody Body { get; set; }
        
     }
+
 }

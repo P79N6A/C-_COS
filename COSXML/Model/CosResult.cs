@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using COSXML.Network;
 /**
@@ -20,7 +20,7 @@ namespace COSXML.Model
 
         public string httpMessage;
 
-        public Dictionary<string, string> responseHeaders;
+        public Dictionary<string, List<string>> responseHeaders;
 
         public string accessUrl;
 
@@ -33,15 +33,20 @@ namespace COSXML.Model
 
         }
 
+        public ResponseBody GetResponseBody() 
+        {
+            return null;
+        }
+
         public virtual string GetResultInfo()
         {
             StringBuilder resultBuilder = new StringBuilder();
             resultBuilder.Append(httpCode).Append(" ").Append(httpMessage).Append("\n");
             if (responseHeaders != null)
             {
-                foreach(KeyValuePair<string, string> element in responseHeaders)
+                foreach(KeyValuePair<string, List<string>> element in responseHeaders)
                 {
-                    resultBuilder.Append(element.Key).Append(": ").Append(element.Value).Append("\n");
+                    resultBuilder.Append(element.Key).Append(": ").Append(element.Value[0]).Append("\n");
                 }
             }
 

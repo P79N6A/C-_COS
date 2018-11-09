@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using COSXML.Common;
 using COSXML.Utils;
@@ -22,20 +22,20 @@ namespace COSXML.Model.Bucket
         {
             if (cosACL != null)
             {
-                AddRequestHeader(CosRequestHeaderKey.X_COS_ACL, cosACL);
+                SetRequestHeader(CosRequestHeaderKey.X_COS_ACL, cosACL);
             }
         }
 
         public void SetCosACL(CosACL cosACL)
         {
-            AddRequestHeader(CosRequestHeaderKey.X_COS_ACL, EnumUtils.GetValue(cosACL));
+            SetRequestHeader(CosRequestHeaderKey.X_COS_ACL, EnumUtils.GetValue(cosACL));
         }
 
         public void setXCosGrantRead(GrantAccount grantAccount)
         {
             if (grantAccount != null)
             {
-                AddRequestHeader(CosRequestHeaderKey.X_COS_GRANT_READ, grantAccount.GetGrantAccounts());
+                SetRequestHeader(CosRequestHeaderKey.X_COS_GRANT_READ, grantAccount.GetGrantAccounts());
             }
         }
 
@@ -43,7 +43,7 @@ namespace COSXML.Model.Bucket
         {
             if (grantAccount != null)
             {
-                AddRequestHeader(CosRequestHeaderKey.X_COS_GRANT_WRITE, grantAccount.GetGrantAccounts());
+                SetRequestHeader(CosRequestHeaderKey.X_COS_GRANT_WRITE, grantAccount.GetGrantAccounts());
             }
         }
 
@@ -51,7 +51,7 @@ namespace COSXML.Model.Bucket
         {
             if (grantAccount != null)
             {
-                AddRequestHeader(CosRequestHeaderKey.X_COS_GRANT_FULL_CONTROL, grantAccount.GetGrantAccounts());
+                SetRequestHeader(CosRequestHeaderKey.X_COS_GRANT_FULL_CONTROL, grantAccount.GetGrantAccounts());
             }
         }
     }

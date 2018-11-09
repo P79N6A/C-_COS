@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using COSXML.Common;
 
@@ -20,7 +20,7 @@ namespace COSXML.Model.Bucket
         {
             if (delimiter != null)
             {
-                AddQueryParameter("delimiter", delimiter);
+                SetQueryParameter("delimiter", delimiter);
             }
         }
 
@@ -28,7 +28,7 @@ namespace COSXML.Model.Bucket
         {
             if (encodingType != null)
             {
-                AddQueryParameter("Encoding-type", encodingType);
+                SetQueryParameter("Encoding-type", encodingType);
             }
         }
 
@@ -36,7 +36,7 @@ namespace COSXML.Model.Bucket
         {
             if (keyMarker != null)
             {
-                AddQueryParameter("key-marker", keyMarker);
+                SetQueryParameter("key-marker", keyMarker);
             }
         }
 
@@ -44,7 +44,7 @@ namespace COSXML.Model.Bucket
         {
             if (maxUploads != null)
             {
-                AddQueryParameter("max-uploads", maxUploads);
+                SetQueryParameter("max-uploads", maxUploads);
             }
         }
 
@@ -52,7 +52,7 @@ namespace COSXML.Model.Bucket
         {
             if (prefix != null)
             {
-                AddQueryParameter("Prefix", prefix);
+                SetQueryParameter("Prefix", prefix);
             }
         }
 
@@ -60,7 +60,7 @@ namespace COSXML.Model.Bucket
         {
             if (uploadIdMarker != null)
             {
-                AddQueryParameter("upload-id-marker", uploadIdMarker);
+                SetQueryParameter("upload-id-marker", uploadIdMarker);
             }
         }
     }

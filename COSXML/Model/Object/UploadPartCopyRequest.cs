@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using COSXML.Common;
 using COSXML.Model.Tag;
@@ -34,7 +34,7 @@ namespace COSXML.Model.Object
             if (start >= 0 && end >= start)
             {
                 string bytes = String.Format("bytes={0}-{1}", start, end);
-                AddRequestHeader(CosRequestHeaderKey.X_COS_COPY_SOURCE_RANGE, bytes);
+                SetRequestHeader(CosRequestHeaderKey.X_COS_COPY_SOURCE_RANGE, bytes);
             }
         }
 
@@ -42,7 +42,7 @@ namespace COSXML.Model.Object
         {
             if (sourceIfModifiedSince != null)
             {
-                AddRequestHeader(CosRequestHeaderKey.X_COS_COPY_SOURCE_IF_MODIFIED_SINCE, sourceIfModifiedSince);
+                SetRequestHeader(CosRequestHeaderKey.X_COS_COPY_SOURCE_IF_MODIFIED_SINCE, sourceIfModifiedSince);
             }
         }
 
@@ -50,7 +50,7 @@ namespace COSXML.Model.Object
         {
             if (sourceIfUnmodifiedSince != null)
             {
-                AddRequestHeader(CosRequestHeaderKey.X_COS_COPY_SOURCE_IF_UNMODIFIED_SINCE, sourceIfUnmodifiedSince);
+                SetRequestHeader(CosRequestHeaderKey.X_COS_COPY_SOURCE_IF_UNMODIFIED_SINCE, sourceIfUnmodifiedSince);
             }
         }
 
@@ -58,7 +58,7 @@ namespace COSXML.Model.Object
         {
             if (eTag != null)
             {
-                AddRequestHeader(CosRequestHeaderKey.X_COS_COPY_SOURCE_IF_MATCH, eTag);
+                SetRequestHeader(CosRequestHeaderKey.X_COS_COPY_SOURCE_IF_MATCH, eTag);
             }
         }
 
@@ -66,7 +66,7 @@ namespace COSXML.Model.Object
         {
             if (eTag != null)
             {
-                AddRequestHeader(CosRequestHeaderKey.X_COS_COPY_SOURCE_IF_NONE_MATCH, eTag);
+                SetRequestHeader(CosRequestHeaderKey.X_COS_COPY_SOURCE_IF_NONE_MATCH, eTag);
             }
         }
 

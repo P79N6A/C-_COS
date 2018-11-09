@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using COSXML.Common;
 
@@ -18,7 +18,7 @@ namespace COSXML.Model.Object
         {
             if (versionId != null)
             {
-                AddQueryParameter(CosRequestHeaderKey.VERSION_ID, versionId);
+                SetQueryParameter(CosRequestHeaderKey.VERSION_ID, versionId);
             }
         }
 
@@ -26,7 +26,7 @@ namespace COSXML.Model.Object
         {
             if (ifModifiedSince != null)
             {
-                AddRequestHeader(CosRequestHeaderKey.IF_MODIFIED_SINCE, ifModifiedSince);
+                SetRequestHeader(CosRequestHeaderKey.IF_MODIFIED_SINCE, ifModifiedSince);
             }
         }
 

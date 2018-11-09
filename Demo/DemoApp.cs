@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using COSXML;
 using COSXML.Common;
@@ -12,6 +12,7 @@ using COSXML.Transfer;
 using COSXML.Utils;
 using COSXML.Mdel.Tag;
 using Demo.test;
+using COSXML.Network;
 
 namespace Demo
 {
@@ -100,7 +101,88 @@ namespace Demo
             //testLifeCycleConfig();
             //testGrantAccount();
 
+            //testUtils();
+
+            /**
+            Uri uriAddress = new Uri("http://www.aiaide.com:8080/Home/index.htm?a=1&b=2#search");
+            Console.WriteLine(uriAddress.Scheme);
+            Console.WriteLine(uriAddress.Authority);
+            Console.WriteLine(uriAddress.Host);
+            Console.WriteLine(uriAddress.Port);
+            Console.WriteLine(uriAddress.AbsolutePath);
+            Console.WriteLine(uriAddress.Query);
+            Console.WriteLine(uriAddress.Fragment);
+            //通过UriPartial枚举获取指定的部分
+            Console.WriteLine(uriAddress.GetLeftPart(UriPartial.Path));
+            //获取整个URI
+            Console.WriteLine(uriAddress.AbsoluteUri);
+            */
+
+            /**
+            Console.WriteLine(CosVersion.SDKVersion);
+            Console.WriteLine(CosVersion.GetUserAgent());
+            Console.WriteLine(CosVersion.GetOsArchitecture());
+            Console.WriteLine(CosVersion.GetOsVersion());
+            */
+
+            //NetworkTest.testGet("https://cloud.tencent.com/");
+
+            //HttpClientConfig config = new HttpClientConfig.Builder().Build();
+            
+            //Console.WriteLine(config.ConnectionLimit);
+
+            //CosXmlConfig coxXmlConfig = new CosXmlConfig();
+
+            //CosXmlConfig cosXmlConfig = new CosXmlConfig.Builder()
+            //.SetAppid("appid").SetRegion("region").IsHttps(true).SetConnectionLimit(100).SetConnectionTimeoutMs(25000)
+            //.SetReadWriteTimeoutMs(25000).SetMaxRetry(3).Build();
+            //Console.WriteLine(cosXmlConfig.Appid + "|" + cosXmlConfig.Region + "|" + cosXmlConfig.IsHttps);
+            //Console.WriteLine(cosXmlConfig.HttpConfig.ConnectionLimit + "|" + cosXmlConfig.HttpConfig.MaxRery);
+
+            //testRequest();
+            InterfaceTest test = new InterfaceTest();
+            test.SetListener(new Impl());
+            test.test();
+
             Console.ReadKey();
+        }
+
+        public static void testRequest()
+        {
+            Request request = new Request();
+            request.IsHttps = true;
+            request.Method = "GET";
+            request.Url = "https://cloud.tencent.com/";
+
+
+
+            HttpClientConfig config = new HttpClientConfig.Builder()
+            .AllowAutoRedirect(true)
+            .SetConnectionLimit(100)
+            .SetConnectionTimeoutMs(45000)
+            .SetReadWriteTimeoutMs(45000)
+            .SetMaxRetry(3)
+            //.SetProxyHost("web-proxy.tencent.com")
+            .SetProxyPort(8080)
+            .Build();
+            CommandTask.Init(config);
+
+            Response response = new Response();
+            response.Body = null;
+
+            CommandTask.excute(request, response, config);
+
+
+            Console.WriteLine(response.Code + "|" + response.Message);
+            foreach(KeyValuePair<string, List<string>> pair in response.Headers)
+            {
+                Console.WriteLine(pair.Key + " : " + pair.Value[0]);
+            }
+        }
+
+        public static void testUtils()
+        {
+            Console.WriteLine(String.Format("this is a test format {0} -> {1} -> {2}", 1, true, "ok"));
         }
 
         public void test()

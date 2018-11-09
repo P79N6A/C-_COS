@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using COSXML.Common;
 using COSXML.CosException;
@@ -27,14 +27,14 @@ namespace COSXML.Model.Object
 
         public void SetCopyMetaDataDirective(CosMetaDataDirective metaDataDirective)
         {
-            AddRequestHeader(CosRequestHeaderKey.X_COS_METADATA_DIRECTIVE, EnumUtils.GetValue(metaDataDirective));
+            SetRequestHeader(CosRequestHeaderKey.X_COS_METADATA_DIRECTIVE, EnumUtils.GetValue(metaDataDirective));
         }
 
         public void SetCopyIfModifiedSince(string sourceIfModifiedSince)
         {
             if (sourceIfModifiedSince != null)
             {
-                AddRequestHeader(CosRequestHeaderKey.X_COS_COPY_SOURCE_IF_MODIFIED_SINCE, sourceIfModifiedSince);
+                SetRequestHeader(CosRequestHeaderKey.X_COS_COPY_SOURCE_IF_MODIFIED_SINCE, sourceIfModifiedSince);
             }
         }
 
@@ -42,7 +42,7 @@ namespace COSXML.Model.Object
         {
             if (sourceIfUnmodifiedSince != null)
             {
-                AddRequestHeader(CosRequestHeaderKey.X_COS_COPY_SOURCE_IF_UNMODIFIED_SINCE, sourceIfUnmodifiedSince);
+                SetRequestHeader(CosRequestHeaderKey.X_COS_COPY_SOURCE_IF_UNMODIFIED_SINCE, sourceIfUnmodifiedSince);
             }
         }
 
@@ -50,7 +50,7 @@ namespace COSXML.Model.Object
         {
             if (eTag != null)
             {
-                AddRequestHeader(CosRequestHeaderKey.X_COS_COPY_SOURCE_IF_MATCH, eTag);
+                SetRequestHeader(CosRequestHeaderKey.X_COS_COPY_SOURCE_IF_MATCH, eTag);
             }
         }
 
@@ -58,33 +58,33 @@ namespace COSXML.Model.Object
         {
             if (eTag != null)
             {
-                AddRequestHeader(CosRequestHeaderKey.X_COS_COPY_SOURCE_IF_NONE_MATCH, eTag);
+                SetRequestHeader(CosRequestHeaderKey.X_COS_COPY_SOURCE_IF_NONE_MATCH, eTag);
             }
         }
 
         public void SetCosStorageClass(CosStorageClass cosStorageClass)
         {
-            AddRequestHeader(CosRequestHeaderKey.X_COS_STORAGE_CLASS_, EnumUtils.GetValue(cosStorageClass));
+            SetRequestHeader(CosRequestHeaderKey.X_COS_STORAGE_CLASS_, EnumUtils.GetValue(cosStorageClass));
         }
 
         public void SetCosACL(string cosACL)
         {
             if (cosACL != null)
             {
-                AddRequestHeader(CosRequestHeaderKey.X_COS_ACL, cosACL);
+                SetRequestHeader(CosRequestHeaderKey.X_COS_ACL, cosACL);
             }
         }
 
         public void SetCosACL(CosACL cosACL)
         {
-            AddRequestHeader(CosRequestHeaderKey.X_COS_ACL, EnumUtils.GetValue(cosACL));
+            SetRequestHeader(CosRequestHeaderKey.X_COS_ACL, EnumUtils.GetValue(cosACL));
         }
 
         public void setXCosGrantRead(GrantAccount grantAccount)
         {
             if (grantAccount != null)
             {
-                AddRequestHeader(CosRequestHeaderKey.X_COS_GRANT_READ, grantAccount.GetGrantAccounts());
+                SetRequestHeader(CosRequestHeaderKey.X_COS_GRANT_READ, grantAccount.GetGrantAccounts());
             }
         }
 
@@ -92,7 +92,7 @@ namespace COSXML.Model.Object
         {
             if (grantAccount != null)
             {
-                AddRequestHeader(CosRequestHeaderKey.X_COS_GRANT_WRITE, grantAccount.GetGrantAccounts());
+                SetRequestHeader(CosRequestHeaderKey.X_COS_GRANT_WRITE, grantAccount.GetGrantAccounts());
             }
         }
 
@@ -100,7 +100,7 @@ namespace COSXML.Model.Object
         {
             if (grantAccount != null)
             {
-                AddRequestHeader(CosRequestHeaderKey.X_COS_GRANT_FULL_CONTROL, grantAccount.GetGrantAccounts());
+                SetRequestHeader(CosRequestHeaderKey.X_COS_GRANT_FULL_CONTROL, grantAccount.GetGrantAccounts());
             }
         }
 
